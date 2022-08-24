@@ -2,6 +2,7 @@ import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:food_delivery/utils/colors.dart';
 import 'package:food_delivery/utils/dimensions.dart';
+import 'package:food_delivery/widgets/app_column.dart';
 import 'package:food_delivery/widgets/big_text.dart';
 import 'package:food_delivery/widgets/icon_and_text.dart';
 import 'package:food_delivery/widgets/small_text.dart';
@@ -202,42 +203,9 @@ class _FoodViewBodyState extends State<FoodViewBody> {
                 ],
               ),
               child: Container(
-                  padding: EdgeInsets.only(top: Dimensions.height15, left: 15.0, right: 15.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      BigText(text: "Chinese Side"),
-                      SizedBox(height: Dimensions.height10),
-                      Row(
-                        children: <Widget>[
-                          Wrap(
-                            children: List.generate(
-                                5,
-                                (index) => Icon(
-                                      Icons.star,
-                                      color: AppColors.mainColor,
-                                      size: 15.0,
-                                    )),
-                          ),
-                          const SizedBox(width: 10.0),
-                          SmallText(text: "4.5"),
-                          const SizedBox(width: 10.0),
-                          SmallText(text: "1287"),
-                          const SizedBox(width: 10.0),
-                          SmallText(text: "comments"),
-                        ],
-                      ),
-                      SizedBox(height: Dimensions.height20),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: <Widget>[
-                          IconAndText(icon: Icons.circle_sharp, text: 'Normal', iconColor: AppColors.iconColor1),
-                          IconAndText(icon: Icons.location_on, text: '1.7km', iconColor: AppColors.mainColor),
-                          IconAndText(icon: Icons.access_time_rounded, text: '32min', iconColor: AppColors.iconColor2),
-                        ],
-                      )
-                    ],
-                  )),
+                padding: EdgeInsets.only(top: Dimensions.height15, left: 15.0, right: 15.0),
+                child: AppColumn(text: "Chinese Side"),
+              ),
             ),
           )
         ],
